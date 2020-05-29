@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+<meta charset="utf-8" />
+<title> Session Storage </title>
+	<style>
+
+	</style>
+    
+	<script>
+	
+	function changePage() {
+		
+		var outName = document.input.userName.value;
+		sessionStorage.setItem("uname", outName);
+		//Session storage allows us to write information to a local file in the users computer. Once the page is closed, the information in the session storage is erased
+		
+		//SessionStorage.setItem allows us to create an entry that requires two strings.
+		
+		//The first string is refferes to a "the key" and the second string is "the value"
+		
+		//The key is used to retrieve the value and acts similar to a variable but is not a vaiable.
+		
+		if (document.getElementById("item1").checked) {
+			var outItem = "Bubble Tea";
+			sessionStorage.setItem("uItem", outItem);
+		}
+		else if (document.getElementById("item2").checked) {
+			var outItem = "Pupper";
+			sessionStorage.setItem("uItem", outItem);
+		}
+		else if (document.getElementById("item3").checked) {
+			var outItem = "Keeeeeeeffffff";
+			sessionStorage.setItem("uItem", outItem);
+		}
+		else if (document.getElementById("item4").checked) {
+			var outItem = "Pokemon Cards";
+			sessionStorage.setItem("uItem", outItem);
+		}
+		
+		if (document.getElementById("direction1").checked) {
+			location= "north.html";
+			//If we want the script to change to a new html page, we simply set the location equal to a string where the string is the name of the html file with the .html extension.			
+		} else if (document.getElementById("direction2").checked) {
+			location= "east.html";
+			
+		} else if (document.getElementById("direction3").checked) {
+			location= "south.html";
+			
+		} else if (document.getElementById("direction4").checked) {
+			location= "west.html";
+			
+		}
+		
+		
+		
+		return false;
+	}
+
+	</script>
+</head>
+
+<body>
+	<form name="input" method="post" onSubmit="return changePage()">
+    
+	<p>
+    	<label for="userName">
+    	What is your name?
+    	<input type="text" id="userName" name="uname" />
+    	</label>
+    </p>
+        
+        
+    	<p>What direction would you like to go in?</p>
+        <p><input type="radio" id="direction1" name="direction" value="north"/> North </p>
+        <p><input type="radio" id="direction2" name="direction" value="east"/> East </p>
+        <p><input type="radio" id="direction3" name="direction" value="south"/> South</p>
+        <p><input type="radio" id="direction4" name="direction" value="west"/> West </p>
+        
+        <p>What item would you like to bring?</p>
+        <p><input type="radio" id="item1" name="item" value="bbt"/> Bubble Tea </p>
+        <p><input type="radio" id="item2" name="item" value="pup"/> Pupper </p>
+        <p><input type="radio" id="item3" name="item" value="keef"/> Keeeeeeeffffff </p>
+        <p><input type="radio" id="item4" name="item" value="pkmn"/> Pokemon Cards </p>
+        
+        <p>
+        	<button type="submit" id="btn1"> Travel </button>
+            <button type="reset" id="btn2"> Reset </button>
+    	</p>
+        
+    </form>
+
+</body>
+</html>

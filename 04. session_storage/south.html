@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+    <title>Session Storage Stuff</title>
+    
+	<script>
+	
+	var person = sessionStorage.getItem("uname");
+	var valuable = sessionStorage.getItem("uItem");
+	
+	function outputHTML() {
+		
+	document.getElementById("title").innerHTML = "Welcome " + person + " to the South!";
+	
+		if (valuable=="Bubble Tea") {
+			document.getElementById("uItem").innerHTML = "<img src='images/bbt.jpeg' width='400' alt='bubble tea'/>";
+		}
+		else if (valuable=="Pupper") {
+			document.getElementById("uItem").innerHTML = "<img src='images/doodle.jpeg' width='400' alt='golden doodle'/>";
+		}
+		else if (valuable=="Keeeeeeeffffff") {
+			document.getElementById("uItem").innerHTML = "<img src='images/keith.jpeg' width='400' alt='Keeeeeeeffffff'/>";
+		}
+		else if (valuable=="Pokemon Cards") {
+			document.getElementById("uItem").innerHTML = "<img src='images/pkmn.jpeg' width='400' alt='pokemon cards'/>";
+		}
+	
+	}
+	</script>
+</head>
+
+<body>
+
+	<h1 id="title">Welcome to the South</h1>
+    <h3>We like guns.</h3>
+    <p id="uItem">Did you bring anything with you?</p>
+   
+</body>
+
+</html>
+
+<script>
+
+	outputHTML();
+
+</script>
